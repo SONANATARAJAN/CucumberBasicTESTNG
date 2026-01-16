@@ -1,6 +1,6 @@
-Feature: Login Validation
-  Scenario: Login Username and Password Validation
-    When Login With Credential
-    And Enter Username and Password
-    Then click enter
+Feature: Login
 
+  Scenario: Valid login
+    Given user opens browser
+    When user enters credentials
+    Then login should be successful

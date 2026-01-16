@@ -2,24 +2,25 @@ plugins {
     id 'java'
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-     implementation("org.seleniumhq.selenium:selenium-java:4.39.0")
-     implementation("io.github.bonigarcia:webdrivermanager:6.3.3")
-     testImplementation("org.testng:testng:7.11.0")
+    testImplementation 'org.testng:testng:7.11.0'
 
-    testImplementation("io.cucumber:cucumber-java:7.33.0")
-    testImplementation("io.cucumber:cucumber-testng:7.33.0")
+    testImplementation 'io.cucumber:cucumber-java:7.33.0'
+    testImplementation 'io.cucumber:cucumber-testng:7.33.0'
 
-
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.39.0'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:6.3.3'
 }
 
 test {
-     useTestNG()
+    useTestNG() {
+        suites 'testng.xml'
+    }
+    testLogging {
+        showStandardStreams = true
+    }
 }
