@@ -18,9 +18,9 @@ public class Hooks {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-    }
+     }
 
-    @After
+  //  @After
     public void tearDown(Scenario scenario) {
         try {
             TakesScreenshot ts = (TakesScreenshot) driver;
