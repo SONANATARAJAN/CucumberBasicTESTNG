@@ -20,7 +20,7 @@ public class LoginSteps {
 
     }
 
-    @Then("login should be successful")
+    @Then("^login should be successful$")
     public void login_success() {
         System.out.println("Login success");
     }
