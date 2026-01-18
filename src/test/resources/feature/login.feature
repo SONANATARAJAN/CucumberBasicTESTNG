@@ -1,6 +1,15 @@
 Feature: Login
 
-  Scenario: Valid login
+  Scenario Outline: Valid login
     Given user opens browser
-    When user enters credentials
+    When user enters credentials "<firstname>" and "<surname>"
     Then login should be successful
+
+    Examples:
+      | firstname | surname |
+      | sona      | Sona N  |
+
+
+
+
+

@@ -10,12 +10,13 @@ public class LoginSteps {
         Hooks.driver.get("https://automationintesting.com/selenium/testpage/");
     }
 
-    @When("user enters credentials")
-    public void enter_credentials() {
-        System.out.println("Entering credentials");
-        Hooks.driver.findElement(By.id("firstname")).sendKeys("sona");
-        Hooks.driver.findElement(By.id("surname")).sendKeys("Sona N");
+    @When("user enters credentials {string} and {string}")
+    public void enter_credentials(String firstname ,String surname) {
+        System.out.println("Entering credentials: " + firstname + " " + surname);
 
+        System.out.println("Entering credentials");
+        Hooks.driver.findElement(By.id("firstname")).sendKeys(firstname);
+        Hooks.driver.findElement(By.id("surname")).sendKeys(surname);
 
     }
 

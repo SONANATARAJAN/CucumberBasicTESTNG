@@ -17,6 +17,5 @@ public class RunnerTest extends AbstractTestNGCucumberTests {
 
     @Test
     public void runCucumber() {
-        // DO NOT REMOVE – THIS TRIGGERS TESTNG
-    }
+     }
 }
