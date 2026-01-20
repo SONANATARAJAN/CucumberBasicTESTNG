@@ -2,6 +2,7 @@ package statement;
 
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
+import utils.BasePage;
 
 public class LoginSteps {
 
@@ -17,6 +18,9 @@ public class LoginSteps {
         System.out.println("Entering credentials");
         Hooks.driver.findElement(By.id("firstname")).sendKeys(firstname);
         Hooks.driver.findElement(By.id("surname")).sendKeys(surname);
+        By xpathDropdown = By.id("gender");
+        BasePage.SelectedClass(xpathDropdown,"female");
+        Hooks.driver.findElement(By.id("red")).click();
 
     }
 
@@ -24,4 +28,5 @@ public class LoginSteps {
     public void login_success() {
         System.out.println("Login success");
     }
+
 }

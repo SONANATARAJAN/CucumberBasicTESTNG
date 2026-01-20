@@ -9,7 +9,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
+import javax.swing.*;
 import java.util.List;
 
 public class dataTableSteps {
@@ -40,15 +43,12 @@ public class dataTableSteps {
         WebElement contactNum = Hooks.driver.findElement(By.xpath("(//input[@id='validationCustom05'])[1]"));
         contactNum.clear();
         contactNum.sendKeys(list.get(2).get(1));
-
-
         Hooks.driver.findElement(By.xpath("(//input[@id='validationCustom05'])[2]")).clear();
 
 
-
-
-
-
+        WebElement dropdown = Hooks.driver.findElement(By.xpath("//select[@id='validationCustom04']"));
+         Select select=new Select(dropdown);
+        select.selectByValue("cashondelivery");
     }
 
 }
